@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="dynamicForm">
+
+<head>
+    <!-- <link data-require="bootstrap@3.3.2" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script data-require="bootstrap@3.3.2" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+    <script data-require="angular.js@1.3.15" data-semver="1.3.15" src="https://code.angularjs.org/1.3.15/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+</head>
+
+<body>
+
+    <div ng-controller="formController" class="container">
+        <h1>Dynamic Input field</h1>
+        <div class="form-group" data-ng-repeat="option in options">
+            <label>Filed Name: </label>
+            <input type="text" ng-modal="{{option.name}}" name="" placeholder="Enter your text here" value="{{option.id}}">
+            <label for="option" ng-show="showoptionLabel(option)">options</label>
+            <button ng-show="showAddOption(option)" ng-click="addNewOption()">Add Text Box</button>
+            <button ng-click="removeNewOption()" >Remove Text Box</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
